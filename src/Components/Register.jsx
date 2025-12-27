@@ -10,18 +10,21 @@ const Register = () => {
           Register
         </legend>
 
-        <form>
+        <form className="flex flex-col gap-3 mt-2">
           <label className="label">Name</label>
-          <input type="text" className="input" placeholder="Full Name" />
+          <input type="text" className="input input-bordered w-full" placeholder="Full Name" required />
 
           <label className="label">Email</label>
-          <input type="email" className="input" placeholder="Email" />
+          <input type="email" className="input input-bordered w-full" placeholder="Email" required />
+
+          <label className="label">Phone</label>
+          <input type="tel" className="input input-bordered w-full" placeholder="Phone Number" required />
 
           <label className="label">Password</label>
-          <input type="password" className="input" placeholder="Password" />
+          <input type="password" className="input input-bordered w-full" placeholder="Password" required />
 
           <label className="label">Confirm Password</label>
-          <input type="password" className="input" placeholder="Confirm Password" />
+          <input type="password" className="input input-bordered w-full" placeholder="Confirm Password" required />
 
           <button className="btn bg-red-700 text-white mt-4 w-full">
             Register
