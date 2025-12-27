@@ -10,21 +10,46 @@ const Register = () => {
           Register
         </legend>
 
-        <form className="flex flex-col gap-3 mt-2">
+        {/* Circular Image Upload with Camera Icon */}
+        <div className="mt-2 text-center">
+          <label className="cursor-pointer inline-block">
+            <input type="file" accept="image/*" className="hidden" />
+            <div className="w-12 h-12 mx-auto rounded-full border-2 border-red-700 flex items-center justify-center overflow-hidden bg-gray-100">
+              {/* Camera Icon */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-gray-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 7h2l2-3h10l2 3h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V8a1 1 0 011-1z"
+                />
+                <circle cx="12" cy="13" r="4" stroke="currentColor" strokeWidth={2} />
+              </svg>
+            </div>
+          </label>
+        </div>
+
+        <form className="flex flex-col gap-2 mt-2">
           <label className="label">Name</label>
-          <input type="text" className="input input-bordered w-full" placeholder="Full Name" required />
+          <input type="text" className="input input-bordered w-full" placeholder="Full Name" />
 
           <label className="label">Email</label>
-          <input type="email" className="input input-bordered w-full" placeholder="Email" required />
+          <input type="email" className="input input-bordered w-full" placeholder="Email" />
 
           <label className="label">Phone</label>
-          <input type="tel" className="input input-bordered w-full" placeholder="Phone Number" required />
+          <input type="tel" className="input input-bordered w-full" placeholder="Phone Number" />
 
           <label className="label">Password</label>
-          <input type="password" className="input input-bordered w-full" placeholder="Password" required />
+          <input type="password" className="input input-bordered w-full" placeholder="Password" />
 
           <label className="label">Confirm Password</label>
-          <input type="password" className="input input-bordered w-full" placeholder="Confirm Password" required />
+          <input type="password" className="input input-bordered w-full" placeholder="Confirm Password" />
 
           <button className="btn bg-red-700 text-white mt-4 w-full">
             Register

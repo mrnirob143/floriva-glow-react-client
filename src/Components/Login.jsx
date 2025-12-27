@@ -10,7 +10,7 @@ const Login = () => {
           Login
         </legend>
 
-        <form>
+       <form className="flex flex-col gap-2 mt-2">
           <label className="label">Email</label>
           <input type="email" className="input" placeholder="Email" />
 
