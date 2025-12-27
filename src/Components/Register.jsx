@@ -10,18 +10,18 @@ const Register = () => {
           Register
         </legend>
 
-        {/* Circular Image Upload with Camera Icon */}
+        {/* Circular Image Upload with Red Camera Icon */}
         <div className="mt-2 text-center">
           <label className="cursor-pointer inline-block">
             <input type="file" accept="image/*" className="hidden" />
-            <div className="w-12 h-12 mx-auto rounded-full border-2 border-red-700 flex items-center justify-center overflow-hidden bg-gray-100">
+            <div className="w-12 h-12 mx-auto rounded-full border-2 border-red-700 flex items-center justify-center overflow-hidden bg-white">
               {/* Camera Icon */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-gray-500"
-                fill="none"
+                className="h-6 w-6 text-red-700"
+                fill="red"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
+                stroke="red"
               >
                 <path
                   strokeLinecap="round"
@@ -29,7 +29,7 @@ const Register = () => {
                   strokeWidth={2}
                   d="M3 7h2l2-3h10l2 3h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V8a1 1 0 011-1z"
                 />
-                <circle cx="12" cy="13" r="4" stroke="currentColor" strokeWidth={2} />
+                <circle cx="12" cy="13" r="5" fill="white" stroke="red" strokeWidth={2} />
               </svg>
             </div>
           </label>
@@ -56,7 +56,6 @@ const Register = () => {
           </button>
         </form>
 
-        {/* Login link */}
         <div className="mt-3 text-center text-sm">
           Already have an Account?{' '}
           <Link to="/login" className="text-red-700 font-semibold hover:underline">
