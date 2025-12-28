@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Vitamin C Glow Serum",
+    "price": 899,
+    "description": "Brightens skin and boosts collagen",
+    "image": "../../src/assets/download.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Hydrating Moisture Cream",
+    "price": 1099,
+    "description": "Deep hydration for 24 hours",
+    "image": "../../src/assets/download (5).jpg"
+  },
+  {
+    "id": 3,
+    "name": "Gentle Facial Cleanser",
+    "price": 499,
+    "description": "Soap-free, pH balanced formula",
+    "image": "../../src/assets/images (1).jpg"
+  },
+  {
+    "id": 4,
+    "name": "SPF 50 Sunscreen",
+    "price": 699,
+    "description": "Broad-spectrum UV protection",
+    "image": "../../src/assets/download (10).jpg"
+  }
+]

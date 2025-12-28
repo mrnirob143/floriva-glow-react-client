@@ -5,8 +5,11 @@ export const FlorivaContext = createContext(null);
 const Context = ({children}) => {
 
       const data = {
-            MyName: 'test'
+            MyName: "Floriva Skin Care"
+            
         }
+        
+
     return (
       
         <FlorivaContext.Provider value={data}>

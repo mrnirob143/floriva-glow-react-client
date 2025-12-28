@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
-
+import { Link } from 'react-router-dom' 
 const ForgotPassword = () => {
   return (
     <div className="flex justify-center items-center h-screen">
