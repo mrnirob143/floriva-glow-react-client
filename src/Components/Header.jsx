@@ -1,41 +1,88 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router'
+import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const Header = () => {
-    const menuItems=<>
-    <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/products'>Products</NavLink></li>
-     <li><NavLink to='/contact'>Contact</NavLink></li>
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Mobile menu toggle
+
+  const menuItems = (
+    <>
+      <li>
+        <NavLink to='/' className={({ isActive }) => isActive ? 'text-red-700 font-bold' : 'text-gray-700'}>
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to='/products' className={({ isActive }) => isActive ? 'text-red-700 font-bold' : 'text-gray-700'}>
+          Products
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to='/contact' className={({ isActive }) => isActive ? 'text-red-700 font-bold' : 'text-gray-700'}>
+          Contact
+        </NavLink>
+      </li>
     </>
+  );
+
   return (
-    <div className='shadow-sm'>
-     <div className="navbar bg-base-100 mx-auto  container">
-  <div className="navbar-start">
-    <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+    <div className='shadow-sm sticky top-0 bg-base-100 z-50'>
+      <div className="navbar container mx-auto px-4">
+
+        {/* Navbar Start */}
+        <div className="navbar-start">
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="btn btn-ghost p-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Logo */}
+          <Link to='/' className="ml-2">
+            <img className='w-28 h-12 sm:w-32 sm:h-14' src="../../src/assets/logo.png" alt="Logo" />
+          </Link>
+        </div>
+
+        {/* Navbar Center - Desktop */}
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1 text-lg text-red-700 font-bold gap-4">
+            {menuItems}
+          </ul>
+        </div>
+
+        {/* Navbar End */}
+        <div className="navbar-end flex items-center gap-4">
+          {/* Cart Icon */}
+          <Link to='/cart' className="relative text-white hover:text-red-700 text-2xl">
+            <FaShoppingCart />
+          </Link>
+
+          {/* Login Button */}
+          <Link
+            to='/login'
+            className="btn border-2 border-red-700 text-red-700 bg-white font-bold hover:bg-red-700 hover:text-white transition-colors"
+          >
+            Login
+          </Link>
+        </div>
       </div>
-      <ul
-        tabIndex="-1"
-        className="menu menu-sm dropdown-content bg-base-100 text-lg text-red-700 font-bold rounded-box z-1 mt-3 w-52 p-2 shadow">
-    {menuItems}
-      </ul>
+
+      {/* Mobile Dropdown Menu */}
+      {isMenuOpen && (
+        <div className="lg:hidden">
+          <ul className="menu menu-vertical bg-base-100 text-red-700 font-bold p-4 space-y-2 shadow-lg">
+            {menuItems}
+          </ul>
+        </div>
+      )}
     </div>
-        <Link to='/' className=""><img className='w-30 h-15 ' src="../../src/assets/logo.png" alt="" /></Link>
+  );
+};
 
-  </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 text-lg text-red-700 font-bold">
-          {menuItems}
-
-    </ul>
-  </div>
-  <div className="navbar-end">
-    <Link to='/login' className="btn bg-base-100 border-2 font-bold border-red-700 text-red-700 hover:bg-red-700 hover:text-white">Login</Link>
-  </div>
-</div> 
-    </div>
-  )
-}
-
-export default Header
+export default Header;

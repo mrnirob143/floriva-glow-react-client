@@ -7,6 +7,10 @@ import Product from './Components/Product'
 import Login from './Components/Login'
 import Register from './Components/Register'
 import ForgotPassword from './Components/ForgotPassword'
+import ProductCard from './Components/ProductCart'
+import Footer from './Components/Footer'
+import Cart from './Components/Cart'
+import Contact from './Components/Contact'
 
 function App() {
 
@@ -14,6 +18,7 @@ function App() {
   return (
     <>
      <Header></Header>
+     
 <div className='container mx-auto'>
        <Routes>
 <Route path='/' element={<Home></Home>}></Route>
@@ -21,11 +26,20 @@ function App() {
 <Route path='/login' element={<Login></Login>}></Route>
 <Route path='/register' element={<Register></Register>}></Route>
 <Route path='/forgotpassword' element={<ForgotPassword></ForgotPassword>}></Route>
+<Route path='/productcard' element={<ProductCard></ProductCard>}></Route>
+<Route path='/footer' element={<Footer></Footer>}></Route>
+<Route path='/cart' element={<Cart></Cart>}></Route>
+<Route path='/contact' element={<Contact></Contact>}></Route>
+
+
+
 
 
 
      </Routes>
+    
 </div>
+ <Footer></Footer>
     </>
   )
 }
