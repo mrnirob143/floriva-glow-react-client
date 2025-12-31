@@ -1,22 +1,25 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from "react";
 
+export const FlorivaContext = createContext();
 
-export const FlorivaContext = createContext(null);
-const Context = ({children}) => {
+const Context = ({ children }) => {
+  const [cart, setCart] = useState([]);
 
-      const data = {
-            MyName: "Floriva Skin Care"
-            
-        }
-        
+  const addToCart = (product) => {
+    setCart((prev) => [...prev, product]);
+  };
 
-    return (
-      
-        <FlorivaContext.Provider value={data}>
+  const removeFromCart = (index) => {
+    const updatedCart = [...cart];
+    updatedCart.splice(index, 1);
+    setCart(updatedCart);
+  };
 
+  return (
+    <FlorivaContext.Provider value={{ cart, addToCart, removeFromCart, setCart }}>
       {children}
-        </FlorivaContext.Provider>
-    );
+    </FlorivaContext.Provider>
+  );
 };
 
 export default Context;

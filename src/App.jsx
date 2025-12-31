@@ -1,5 +1,5 @@
 
-import { Route, Routes } from 'react-router'
+import { Route, Routes } from "react-router-dom"; // ✅ FIXED
 import './App.css'
 import Header from './Components/Header'
 import Home from './Components/Home'
